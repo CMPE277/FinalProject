@@ -69,11 +69,12 @@ public class StudentProfile extends ActionBarActivity {
 		txtResumeLink = (EditText)findViewById(R.id.txtResume);
 		txtLinkedlnLink = (EditText)findViewById(R.id.txtLinkedln);
 		
-		studentData.put("name", txtFirstName.getText().toString().trim() + " " + txtLastName.getText().toString().trim());
+		studentData.put("name", txtFirstName.getText().toString().trim());
+		studentData.put("phone", txtFirstName.getText().toString().trim());
 		studentData.put("student_id", txtStudentId.getText().toString());
 		studentData.put("intro", txtIntro.getText().toString());
 		studentData.put("resume", txtResumeLink.getText().toString());
-		studentData.put("LinkedlnLink", txtLinkedlnLink.getText().toString());
+		studentData.put("linkedin", txtLinkedlnLink.getText().toString());
 		studentData.put("device_reg_id", registrationId);
 		
 		
