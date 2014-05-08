@@ -1,19 +1,20 @@
 package edu.sjsu.jobfair;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
 public class StudentLogin extends ActionBarActivity {
 
+	Intent intent;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -23,6 +24,9 @@ public class StudentLogin extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		//if(savedInstanceState.containsKey(Home.PROPERTY_REG_ID)) Log.i(">>>", savedInstanceState.getString(Home.PROPERTY_REG_ID));
+		intent = getIntent();
 	}
 
 	@Override
@@ -47,6 +51,7 @@ public class StudentLogin extends ActionBarActivity {
 	
 	public void openStudentDetailsPage(View v) {
 		Intent i = new Intent(this, StudentProfile.class);
+		i.putExtras(intent.getExtras());
 		startActivity(i); 
 	}
 

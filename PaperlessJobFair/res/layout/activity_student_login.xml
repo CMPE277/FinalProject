@@ -51,10 +51,9 @@
         android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtPassword"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/txtPassword"
-        android:layout_marginTop="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="69dp"
         android:onClick="openStudentDetailsPage"
         android:text="Submit" />
 

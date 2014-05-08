@@ -6,6 +6,7 @@ import java.util.Map;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,8 +19,9 @@ import android.os.Build;
 
 public class StudentProfile extends ActionBarActivity {
 
-	RestClient restClient = new RestClient();
+	RestClient restClient;
 	EditText txtFirstName, txtLastName, txtStudentId, txtResumeLink, txtLinkedlnLink, txtIntro;
+	Intent intent;
 
 	
 	@Override
@@ -31,6 +33,9 @@ public class StudentProfile extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		 intent = getIntent();
+		 restClient = new RestClient();
 	}
 
 	@Override
@@ -54,7 +59,8 @@ public class StudentProfile extends ActionBarActivity {
 	}
 
 	public void submitStudentData(View v) {
-		HashMap<String, String> studentData = new HashMap<String,String>();
+		HashMap<String, Object> studentData = new HashMap<String,Object>();
+		String registrationId = intent.getStringExtra("registration_id");
 		
 		txtFirstName = (EditText)findViewById(R.id.txtFirstName);
 		txtLastName = (EditText)findViewById(R.id.txtLastName);
@@ -70,10 +76,12 @@ public class StudentProfile extends ActionBarActivity {
 		studentData.put("Intro", txtIntro.getText().toString());
 		studentData.put("ResumeLink", txtResumeLink.getText().toString());
 		studentData.put("LinkedlnLink", txtLinkedlnLink.getText().toString());
+		studentData.put("RegistrationId", registrationId);
 		
 		
 		System.out.println("Post Student Data");
-		restClient.postData(studentData);
+		
+		restClient.postRESTData(studentData);
 	}
 	
 	/**

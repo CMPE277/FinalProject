@@ -1,17 +1,22 @@
 package edu.sjsu.jobfair;
 
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 
 public class EmployeeSearch extends ActionBarActivity {
+
+	Map<String, String> studentIdRegIdLookup = new HashMap<String, String>();
+	RestClient restClient;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,8 @@ public class EmployeeSearch extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+
+		restClient = new RestClient();
 	}
 
 	@Override
@@ -59,6 +66,24 @@ public class EmployeeSearch extends ActionBarActivity {
 					container, false);
 			return rootView;
 		}
+	}
+
+	private boolean pingStudent(String studentId) {
+		if (studentIdRegIdLookup.containsKey(studentId)) {
+			Map<String, Object> data = new HashMap<String, Object>();
+
+			data.put("title", "Employee X");
+			data.put("message", "Meet me at booth.");
+			data.put(Home.PROPERTY_REG_ID, studentIdRegIdLookup.get(studentId));
+
+			Map<String, Object> headers = new HashMap<String, Object>();
+			headers.put("Authorization",
+					"key=AIzaSyDnVGPX9KiJgnl9LFg9GyyOCw3JONW6cj8");
+			headers.put("Content-Type", " application/json");
+
+			restClient.postGCMData(data);
+		}
+		return true;
 	}
 
 }

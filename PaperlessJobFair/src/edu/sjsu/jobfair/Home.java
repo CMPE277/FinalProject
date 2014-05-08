@@ -110,7 +110,10 @@ public class Home extends ActionBarActivity {
 	}
 	
 	public void openStudentLoginPage(View v) {
+		Bundle data = new Bundle();
+		data.putString(PROPERTY_REG_ID, regid);
 		Intent i = new Intent(this, StudentLogin.class);
+		i.putExtras(data);
 		startActivity(i); 
 	}
 	
@@ -189,6 +192,7 @@ public class Home extends ActionBarActivity {
      */
     private void registerInBackground() {
     	Log.i("F.DemoActivity","In registerInBackground()");
+    	
         new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... params) {
@@ -223,7 +227,7 @@ public class Home extends ActionBarActivity {
 
             @Override
             protected void onPostExecute(String msg) {
-                mDisplay.append(msg + "\n");
+                Log.i("F.DemoActivity",msg + "\n");
             }
         }.execute(null, null, null);
     }
