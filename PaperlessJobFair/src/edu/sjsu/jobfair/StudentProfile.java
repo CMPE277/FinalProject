@@ -69,14 +69,12 @@ public class StudentProfile extends ActionBarActivity {
 		txtResumeLink = (EditText)findViewById(R.id.txtResume);
 		txtLinkedlnLink = (EditText)findViewById(R.id.txtLinkedln);
 		
-		studentData.put("A", "AB");
-		studentData.put("FirstName", txtFirstName.getText().toString());
-		studentData.put("LastName", txtLastName.getText().toString());
-		studentData.put("StudentId", txtStudentId.getText().toString());
-		studentData.put("Intro", txtIntro.getText().toString());
-		studentData.put("ResumeLink", txtResumeLink.getText().toString());
+		studentData.put("name", txtFirstName.getText().toString().trim() + " " + txtLastName.getText().toString().trim());
+		studentData.put("student_id", txtStudentId.getText().toString());
+		studentData.put("intro", txtIntro.getText().toString());
+		studentData.put("resume", txtResumeLink.getText().toString());
 		studentData.put("LinkedlnLink", txtLinkedlnLink.getText().toString());
-		studentData.put("RegistrationId", registrationId);
+		studentData.put("device_reg_id", registrationId);
 		
 		
 		System.out.println("Post Student Data");

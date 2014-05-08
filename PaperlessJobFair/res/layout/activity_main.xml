@@ -1,30 +1,55 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="edu.sjsu.jobfair.Home"
-    tools:ignore="MergeRootFrame" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bk"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="478dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.25"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        android:src="@drawable/gh" />
+
+    <Button
+        android:id="@+id/About"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@color/LightGreen"
+        android:text="@string/About" />
+
+     <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_title"
+        android:gravity="center_horizontal"
+        android:textSize="20dp" 
+        android:textColorHint="@color/Black"/>
 
     <Button
         android:id="@+id/btnStudent"
-        android:layout_width="wrap_content"
+        android:layout_width="178dp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnEmployer"
-        android:layout_alignRight="@+id/btnEmployer"
-        android:layout_below="@+id/btnEmployer"
-        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:onClick="openStudentLoginPage"
-        android:text="Student" />
+        android:background="@color/LightGreen"
+        android:text="@string/student" />
 
-    <Button
-        android:id="@+id/btnEmployer"
-        android:layout_width="203dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp"
-        android:onClick="openEmployerLoginPage"
-        android:text="Employer" />
+     <Button
+         android:id="@+id/btnEmployer"
+         android:layout_width="178dp"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_margin="10dp"
+         android:onClick="openEmployerLoginPage"
+         android:background="@color/LightGreen"
+         android:text="@string/employer" />
 
-</RelativeLayout>
+</LinearLayout>

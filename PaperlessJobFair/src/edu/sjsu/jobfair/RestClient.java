@@ -23,18 +23,21 @@ public class RestClient {
 			@Override
 			protected String doInBackground(Map... params) {
 
-				// Create a new HttpClient and Post Header
-				HttpClient httpclient = new DefaultHttpClient();
-				HttpPost httppost = new HttpPost(
-						"http://192.168.1.7:80/test.php");
-
 				try {
-					// Add your data
+					Map<String, Object> data = params[0];
+					String studentId = (String) data.get("student_id");
 
-					JSONObject json = new JSONObject(params[0]);
+					// Create a new HttpClient and Post Header
+					HttpClient httpclient = new DefaultHttpClient();
+					HttpPost httppost = new HttpPost(
+							"http://54.215.205.214/student/" + studentId);
+
+					// Add your data
+					JSONObject json = new JSONObject(data);
 					Log.i("JSONArray", json.toString());
 
 					httppost.setEntity(new StringEntity(json.toString()));
+					httppost.addHeader("Content-Type", " application/json");
 
 					httpclient.execute(httppost);
 				} catch (Exception e) {
@@ -67,7 +70,7 @@ public class RestClient {
 					Map<String, Object> hm = params[0];
 					// Add your data
 					ArrayList<String> regIds = new ArrayList<String>();
-					regIds.add((String)hm.get("registration_id"));
+					regIds.add((String) hm.get("registration_id"));
 					hm.put("registration_ids", regIds);
 					hm.put("data", hm.get("message"));
 

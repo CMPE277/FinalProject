@@ -1,6 +1,5 @@
 package edu.sjsu.jobfair;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,13 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">JobFair</string>
+    <string name="mainapp_title1">Welcome to Paperless JobFair!</string>
+    <string name="hello">Hello World, LoginActivity!</string>
+    <string name="choose_title">Please Choose your Designation</string>
+    <string name="app_name">Paperless JobFair helper</string>
+    <string name="login_title">Please Login!</string>
+    <string name="About">About the App</string>
+    <string name="aboutapp_title">About</string>
+    <string name="info_title">Hello,Please Fill the Following!</string>
+    <string name="employsearch_title">Hello Employer!</string>
+    <string name="employeeid">EmployeeId</string>
+    <string name="studentdetails">Here are the Student Details</string>
+    <string name="student">STUDENT</string>
+    <string name="employer">EMPLOYER</string>
+    <string name="password">Password</string>
+    <string name="fname">FirstName</string>
+    <string name="lname">LastName</string>
+    <string name="search">Search Student Profile</string>
+    <string name="studentid">Student Id</string>
+    <string name="Resume">Resume</string>
+    <string name="Intro">Intro</string>
+    <string name="LinkedinProfile">LinkedinProfile</string>
+    <string name="comments">Comments</string>
+    <string name="login">Login</string>
+    <string name="submit">SUBMIT</string>
+    <string name="upload">UPLOAD FILE</string>
+    <string name="download">DOWNLOAD FILE</string>
+    <string name="title_activity_employee_search">EmployeeSearch</string>
     <string name="hello_world"></string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_student_login">StudentLogin</string>
+    <string name="title_activity_student_login">EmployeeLogin</string>
     <string name="title_activity_employee_login">EmployeeLogin</string>
-    <string name="title_activity_employee_search">EmployeeSearch</string>
-    <string name="title_activity_student_profile">StudentProfile</string>
     <string name="title_activity_employee_comments">EmployeeComments</string>
+    <string name="title_activity_student_profile">StudentProfile</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_about_app">AboutApp</string>
 
 </resources>
