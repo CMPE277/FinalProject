@@ -3,6 +3,7 @@ package edu.sjsu.jobfair;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -11,8 +12,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 public class EmployeeSearch extends ActionBarActivity {
+	
+	EditText ed;
 
 	Map<String, String> studentIdRegIdLookup = new HashMap<String, String>();
 	RestClient restClient;
@@ -28,6 +32,8 @@ public class EmployeeSearch extends ActionBarActivity {
 		}
 
 		restClient = new RestClient();
+		ed = (EditText) findViewById(R.id.txtStudentId);
+		
 	}
 
 	@Override
@@ -84,5 +90,22 @@ public class EmployeeSearch extends ActionBarActivity {
 		}
 		return true;
 	}
+	
+	public void commentsActivity(View v) {
+		
+		Bundle data = new Bundle();
+		data.putString("stud_id", ed.getText().toString());
+		
+		//ed.getText().toString()
+		
+		Intent i = new Intent(this, EmployeeComments.class);
+		/*Bundle b = new Bundle();
+		b.putString("stud_id",ed.getText().toString() );
+		i.putExtras(b);*/
+		i.putExtras(data);
+
+		startActivity(i); 
+	}
+	
 
 }

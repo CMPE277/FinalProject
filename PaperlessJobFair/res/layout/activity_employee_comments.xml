@@ -1,156 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-   android:id="@+id/container"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@drawable/lbk" >
-      <!-- Login Title -->
+    android:background="@drawable/lbk"
+    android:orientation="vertical" >
+
+    <!-- Login Title -->
+
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/studentdetails"
         android:gravity="center_horizontal"
-        android:textSize="15dp" 
-          android:textColorHint="@color/Black"
-        />
+        android:text="@string/studentdetails"
+        android:textColorHint="@color/Black" />
 
+    <EditText
+        android:id="@+id/fname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="79dp"
+        android:ems="10"
+        android:hint="@string/fname"
+        android:inputType="text"
+        android:textColorHint="@color/Black" >
 
-   <!-- layout for Username -->
-    <LinearLayout
-            android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:layout_weight="0.01"
-      android:padding="10dp">
+        <requestFocus />
+    </EditText>
 
-        <EditText
-            android:id="@+id/fname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:ems="10"
-            android:hint="@string/fname"
-            android:inputType="text"
-      android:textColorHint="@color/Black"
-           >
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/comments"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="85dp"
+        android:background="@color/LightGreen"
+        android:text="@string/submit"
+        android:onClick="submitApp" />
 
-            <requestFocus />
-        </EditText>
-    </LinearLayout>
-    <!-- layout for Password -->
-    <LinearLayout
-            android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:layout_weight="0.01"
-      android:padding="10dp"
-     >
-        
-        <EditText
-            android:id="@+id/lname"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:hint="@string/lname"
-            android:inputType="text"
-            android:textColorHint="@color/Black" />
+    <EditText
+        android:id="@+id/comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fname"
+        android:layout_below="@+id/fname"
+        android:layout_marginTop="118dp"
+        android:ems="10"
+        android:hint="@string/comments"
+        android:inputType="text"
+        android:textColorHint="@color/Black" />
 
-    </LinearLayout>
-     <LinearLayout
-            android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:layout_weight="0.01"
-      android:padding="10dp"
-     
-      >
+    <EditText
+        android:id="@+id/studentid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fname"
+        android:layout_alignRight="@+id/LinkedinProfile"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/studentid"
+        android:inputType="text"
+        android:textColorHint="@color/Black" />
 
-        <EditText
-            android:id="@+id/studentid"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:hint="@string/studentid"
-            android:inputType="text"
-             android:textColorHint="@color/Black" />
+    <EditText
+        android:id="@+id/LinkedinProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fname"
+        android:layout_below="@+id/fname"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:hint="@string/LinkedinProfile"
+        android:inputType="text"
+        android:textColorHint="@color/Black" />
 
-    </LinearLayout>
-     <LinearLayout
-            android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:layout_weight="0.01"
-      android:padding="10dp"
-     
-      >
-
-         <TextView
-             android:id="@+id/Resume"
-             android:layout_width="20dp"
-             android:layout_height="34dp"
-             android:layout_weight="0.54"
-             android:hint="@string/Resume"
-             android:inputType="text"
-             android:textColorHint="@color/Black"
-             android:textSize="20dp" />
-
-         <Button
-             android:id="@+id/download"
-             android:layout_width="89dp"
-             android:layout_height="wrap_content"
-             android:layout_margin="10dp"
-             android:layout_weight="0.64"
-             
-             android:text="@string/download" />
-
-    </LinearLayout>
-     <LinearLayout
-            android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:layout_weight="0.01"
-      android:padding="10dp"
-     
-      >
-
-        <EditText
-            android:id="@+id/LinkedinProfile"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:hint="@string/LinkedinProfile"
-            android:inputType="text"
-            android:textColorHint="@color/Black" />
-
-    </LinearLayout>
-<LinearLayout
-            android:layout_width="fill_parent"
-      android:layout_height="wrap_content"
-      android:orientation="horizontal"
-      android:layout_weight="0.01"
-      android:padding="10dp"
-     
-      >
-
-        <EditText
-            android:id="@+id/comments"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.0"
-            android:hint="@string/comments"
-            android:inputType="text"
-            android:textColorHint="@color/Black" />
-
-    </LinearLayout>
-     <Button
-         android:id="@+id/submit"
-         android:layout_width="89dp"
-         android:layout_height="wrap_content"
-         android:layout_gravity="right"
-         android:layout_margin="10dp"
-         android:background="@color/LightGreen"
-         android:text="@string/submit" />
-
-</LinearLayout>
-
+</RelativeLayout>

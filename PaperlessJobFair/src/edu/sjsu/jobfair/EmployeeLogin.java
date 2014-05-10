@@ -3,6 +3,7 @@ package edu.sjsu.jobfair;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -43,6 +44,13 @@ public class EmployeeLogin extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	
+	public void employeeSearch(View v) {
+		Intent i = new Intent(this, EmployeeSearch.class);
+		startActivity(i); 
+	}
+	
+	
 
 	/**
 	 * A placeholder fragment containing a simple view.

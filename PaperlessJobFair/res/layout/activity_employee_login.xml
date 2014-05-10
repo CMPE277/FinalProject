@@ -66,6 +66,7 @@
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:background="@color/Magenta"
-        android:text="@string/login" />
+        android:text="@string/login"
+        android:onClick="employeeSearch" />
 
 </LinearLayout>

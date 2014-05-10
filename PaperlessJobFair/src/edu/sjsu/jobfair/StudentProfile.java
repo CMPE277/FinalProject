@@ -20,7 +20,7 @@ import android.os.Build;
 public class StudentProfile extends ActionBarActivity {
 
 	RestClient restClient;
-	EditText txtFirstName, txtLastName, txtStudentId, txtResumeLink, txtLinkedlnLink, txtIntro;
+	EditText txtFirstName, txtStudentId, txtResumeLink, txtLinkedlnLink, txtIntro;
 	Intent intent;
 
 	
@@ -63,14 +63,14 @@ public class StudentProfile extends ActionBarActivity {
 		String registrationId = intent.getStringExtra("registration_id");
 		
 		txtFirstName = (EditText)findViewById(R.id.txtFirstName);
-		txtLastName = (EditText)findViewById(R.id.txtLastName);
+		//txtLastName = (EditText)findViewById(R.id.txtLastName);
 		txtStudentId = (EditText)findViewById(R.id.txtStudentId);
 		txtIntro = (EditText)findViewById(R.id.txtIntro);
 		txtResumeLink = (EditText)findViewById(R.id.txtResume);
 		txtLinkedlnLink = (EditText)findViewById(R.id.txtLinkedln);
 		
 		studentData.put("name", txtFirstName.getText().toString().trim());
-		studentData.put("phone", txtFirstName.getText().toString().trim());
+		//studentData.put("phone", txtFirstName.getText().toString().trim());
 		studentData.put("student_id", txtStudentId.getText().toString());
 		studentData.put("intro", txtIntro.getText().toString());
 		studentData.put("resume", txtResumeLink.getText().toString());
