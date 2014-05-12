@@ -57,7 +57,7 @@ public class ServiceHandler {
             }
             
             if (method == POST) {
-            	DefaultHttpClient httpclient = new DefaultHttpClient();
+            	//DefaultHttpClient httpclient = new DefaultHttpClient();
             	HttpPost httpPostRequest = new HttpPost(url);
             	
             	StringEntity se;
@@ -67,7 +67,7 @@ public class ServiceHandler {
             	httpPostRequest.setHeader("Content-type", "application/json");
             	
             	@SuppressWarnings("unused")
-				HttpResponse response = (HttpResponse) httpclient.execute(httpPostRequest);
+				HttpResponse response = (HttpResponse) httpClient.execute(httpPostRequest);
             	
  
             }
