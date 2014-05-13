@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.os.Build;
 
 public class StudentProfile extends ActionBarActivity {
@@ -81,7 +82,15 @@ public class StudentProfile extends ActionBarActivity {
 		System.out.println("Post Student Data");
 		
 		restClient.postRESTData(studentData);
+		
+		Toast.makeText(getApplicationContext(),"Profile updated!", Toast.LENGTH_LONG).show();
+	     
+	     Intent searchIntent = new Intent (getApplicationContext(),Home.class);
+	     startActivity(searchIntent);
+		
+		
 	}
+	
 	
 	/**
 	 * A placeholder fragment containing a simple view.
